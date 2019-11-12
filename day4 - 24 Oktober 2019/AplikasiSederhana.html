@@ -1,0 +1,172 @@
+<html>
+    <script>
+        function segitigasikubawah(tinggi){
+            let output = ''
+            for(let i=0;i<tinggi;i++){
+                for(let j=0;j<=i;j++){
+                    output += '*'
+                }
+                if(i<tinggi-1){
+                output += '\n' 
+                }
+            } 
+            return output                                           
+        }
+        function segitigasikuatas(tinggi){
+            let output = ''
+            for(let i=0;i<tinggi;i++){
+                for(let j=i;j<tinggi;j++){
+                    output += '*'
+                }
+                if(i<tinggi-1){
+                output += '\n' 
+                }
+            }
+            return output                               
+        }
+        function segitigabesaratas(tinggi){
+            let output = ''
+            for(i = 0;i < tinggi;i++){
+                for(j = 0; j <=i; j++){
+                    output+=' '
+                }
+                for(k = i;k < tinggi; k++){
+                    output+='*'
+                }
+                for(l = i + 1;l < tinggi;l++){
+                    output+='*'
+                }
+                if(i < tinggi - 1){
+                    output+='\n'
+                }                                    
+            }  
+            return output                                                             
+        }
+        function segitigabesarbawah(tinggi){
+            let output = ''
+            for(i = 0;i < tinggi;i++){
+                for(j = i; j <=tinggi; j++){
+                    output+=' '
+                }
+                for(k = 0;k <= i; k++){
+                    output+='*'
+                }
+                for(l = 0;l <= i - 1;l++){
+                    output+='*'
+                }
+                if(i < tinggi - 1){
+                    output+='\n'
+                }
+            }                                
+            return output
+        }
+        alert('Selamat datang di aplikasi kami')
+        do{
+            var konfirmasiutama = true
+            var menuutama = prompt('Menu:\n1.Belajar\n2.Belanja\n3.Segitiga\n4.Exit')
+            if (menuutama == 1){
+                var konfirmasi1 = true
+                while (konfirmasi1){
+                    var menubelajar = prompt('Belajar apa:\n1.Luas segitiga\n2.Luas Persegi\n3.Volume Balok')
+                    if (menubelajar == 1){
+                        function segitiga(alassegitiga, tinggisegitiga){
+                        rumussegitiga = 0.5 * alassegitiga * tinggisegitiga
+                        var output = 'Luas segitiga adalah '+rumussegitiga+ ' CM^2'
+                        return output
+                        }
+                        var alassegitiga = parseInt(prompt('Masukkan alas segitiga'))
+                        var tinggisegitiga = parseInt(prompt('Masukkan tinggi segitiga'))
+                        alert(segitiga(alassegitiga,tinggisegitiga))
+                    }
+                    else if (menubelajar == 2){
+                        function persegi(sisipersegi){
+                        rumuspersegi = sisipersegi * sisipersegi
+                        var output = 'Luas persegi adalah '+rumuspersegi+ ' CM^2'
+                        return output
+                        }
+                        var sisipersegi = parseInt(prompt('Masukkan sisi persegi'))
+                        alert(persegi(sisipersegi))
+                    }
+                    else if (menubelajar == 3){
+                        function balok(panjangbalok,lebarbalok,tinggibalok){
+                        var rumusbalok = panjangbalok * lebarbalok * tinggibalok
+                        var output = 'Luas balok adalah '+rumusbalok
+                        return output
+                        }
+                        var panjangbalok = parseInt(prompt('Masukkan panjang balok'))
+                        var lebarbalok = parseInt(prompt('Masukkan lebar balok'))
+                        var tinggibalok = parseInt(prompt('Masukkan tinggi balok'))
+                        alert(balok(panjangbalok,lebarbalok,tinggibalok))
+                    }
+                    else{
+                        alert('Anda salah input 2')
+                    }
+                    konfirmasi1 = confirm('Apakah ingin melanjutkan belajar?')
+                }     
+            }
+            else if (menuutama == 2){
+                var konfirmasi2 =  true
+                var totalbelanja = 0
+                while (konfirmasi2){
+                    var listbarang = prompt('Menu belanja :\n1.Ayam Rp.10000\n2.Salmon Rp.20000\n3.Kalkun Rp.30000')
+                    var harga = 0
+                    if(listbarang == 1){
+                        harga = 10000
+                    }
+                    else if(listbarang == 2){
+                        harga = 20000
+                    }
+                    else if(listbarang == 3){
+                        harga = 30000
+                    }
+                    var qty = parseInt(prompt('Mau beli berapa Kilo? '))
+                    totalbelanja += (qty*harga)
+                    konfirmasi2 = confirm('Apakah mau belanja kembali?')
+                }
+                if(totalbelanja){
+                    alert('Total belanja adalah Rp.'+totalbelanja+',00')
+                }
+                else{
+                    alert('Silahkan belanja kembali')
+                }
+            }
+            else if (menuutama == 3){
+                do{
+                    var menusegitiga = prompt('1.Segitiga siku-siku\n2.Segitiga sama kaki')
+                    if(menusegitiga == 1){
+                        var menualas = prompt('Pilih Alasnya : \n1.Alas Atas\n2.Alas Bawah')
+                        var tinggibintang = parseInt(prompt('Masukkan tinggi segitiga'))
+                        if(menualas == 1){
+                            alert(segitigasikuatas(tinggibintang))
+                        }
+                        else{
+                            alert(segitigasikubawah(tinggibintang))
+                        }
+                    }
+                    else{
+                        var menualas = prompt('Pilih Alasnya : \n1.Alas Atas\n2.Alas Bawah')
+                        var tinggibintang = parseInt(prompt('Masukkan tinggi segitiga'))
+                        if(menualas == 1){
+                            alert(segitigabesaratas(tinggibintang))
+                        }
+                        else{
+                            alert(segitigabesarbawah(tinggibintang))
+                        } 
+                    }
+
+
+                    var konfirmasi3 = confirm('Mau input lagi?')
+                }              
+                while (konfirmasi3)           
+            } 
+            else if (menuutama == 4){
+                alert('Terima kasih telah menggunakan aplikasi kami')
+                break
+            }
+            else{
+                alert('Anda salah input 1')
+            }   
+        } 
+        while (true);
+    </script>
+</html>

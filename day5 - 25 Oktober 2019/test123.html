@@ -1,0 +1,27 @@
+<html>
+    <script>
+    function segitagabesarterbalik(tinggi){
+    let z=''
+
+    for(let a=0;a<tinggi;a++){
+        for(let b=0;b<=a;b++){
+            z+=' '
+        }
+        for(let c=a;c<tinggi;c++){
+            z+='*'
+        }
+        for(let d=a+1;d<tinggi;d++){
+            z+='*'
+        }
+        if(a<tinggi-1){
+            z+='\n'
+        }
+    }
+    return z
+}
+
+                        
+                        var tinggi = parseInt(prompt('Masukkan tinggi segitiga'))
+                        alert(segitigabesar(tinggi))
+    </script>
+</html>

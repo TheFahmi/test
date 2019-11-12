@@ -1,0 +1,46 @@
+<html>
+    <script>
+        var data = ['Fahmi','Test']
+        function checknama(namalogin){
+            for(i = 0;i < data.length;i++){
+                if(data[i].toLowerCase() == namalogin.toLowerCase()){
+                return true
+                }
+            }
+            return false
+        }
+        do {
+            var konfirmasiutama = true
+            menu = prompt('Pilih Menu\n1.Login\n2.Register\n3.Exit')
+            if(menu == 1){
+                var login = prompt('Silahkan masukkan username')
+                if(checknama(login)){
+                    alert('Anda berhasil login')
+                    break
+                }
+                else{
+                    alert('Anda gagal login')
+                }
+            }
+            else if(menu == 2){                
+                var b = prompt('Silahkan register username')
+                data.push(b)
+                alert(data)
+                alert('Silahkan coba login')
+            }
+            else if(menu == 3){
+                alert('Terima kasih telah menggunakan aplikasi kami')
+                break
+            }
+            else{
+                alert('Anda salah input')
+            }
+            
+        } while (true);
+        // function register(b){
+        //     data.push(b)
+        // }
+
+
+    </script>
+</html>

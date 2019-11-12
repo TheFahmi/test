@@ -1,0 +1,193 @@
+<html>
+<!-- <script>
+    var bilangan = prompt('Masukkan bilangan')
+    var hasil = bilangan%2
+    if (hasil == 0)
+    {
+        alert( +bilangan+ ' Bilangan Genap')
+    }
+    else
+    {
+        alert( +bilangan+ ' Bilangan Ganjil')
+    }
+
+    console.log(hasil)
+</script> -->
+
+<!-- <script>
+    var alas = prompt('Masukkan Jenis Alas (Sendal/Sepatu)')
+    alas.toLowerCase()
+    var warna = prompt('Masukkan Jenis Warna (Merah/Biru)')
+    warna.toLowerCase()
+    var harga = prompt('Masukkan Harga (Mahal/Murah)')
+    harga.toLowerCase()
+
+    switch (true)
+    {
+        case (alas == 'Sepatu' && warna == 'Merah' && harga == 'Mahal'):
+            console.log('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            document.write('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            break;
+        case (alas == 'Sepatu' && warna == 'Merah' && harga == 'Murah'):
+            console.log('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            document.write('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            break;
+        case (alas == 'Sepatu' && warna == 'Biru' && harga == 'Mahal'):
+            console.log('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            document.write('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            break;
+        case (alas == 'Sepatu' && warna == 'Biru' && harga == 'Murah'):
+            console.log('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            document.write('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            break;
+        case (alas == 'Sendal' && warna == 'Merah' && harga == 'Mahal'):
+            console.log('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            document.write('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            break;
+        case (alas == 'Sendal' && warna == 'Merah' && harga == 'Murah'):
+            console.log('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            document.write('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            break;
+        case (alas == 'Sendal' && warna == 'Biru' && harga == 'Mahal'):
+            console.log('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            document.write('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            break;
+        case (alas == 'Sendal' && warna == 'Biru' && harga == 'Murah'):
+            console.log('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            document.write('Alas '+alas+ ' Warna ' +warna+ ' Harga ' +harga)
+            break;
+        default:
+            console.log('Alas, warna dan harga tidak tersedia')
+            document.write('Alas, warna dan harga tidak tersedia')
+
+
+    }
+
+</script>  -->
+<!--
+<script>
+    var bulan = new Date
+    var month = bulan.getMonth()
+    var waktu = bulan.getTime()
+
+    alert(waktu)
+
+    if (month = 9)
+    {
+        document.write('Saat ini bulan ' +month+ ' : Oktober')
+    }
+    else
+    {
+        document.write('Bukan bulan')
+    } 
+
+    
+
+
+</script> -->
+
+<!-- <script>
+
+var berat = prompt('Masukkan berat badan')
+var tinggi = prompt('Masukkan tinggi badan (Meter) ')
+var hitungtinggi = Math.pow(tinggi, 2)
+var imt = berat/hitungtinggi
+
+if (imt < 18.5)
+{
+    alert ('Berat badan kurang')
+}
+else if (imt >= 18.5 && imt <= 24.9)
+{
+    alert ('Berat badan ideal')
+}
+else if (imt >= 25.0 && imt <= 29.9)
+{
+    alert('Berat badan berlebih')
+}
+else if (imt >= 30.0 && imt <= 39.9)
+{
+    alert ('Berat badan sangat berlebih')
+}
+else
+{
+    alert('Berat badan Obesitas')
+}
+console.log(imt)
+</script>  -->
+<!-- 
+<script>
+var angka = Math.floor(Math.random()*100)
+document.write(angka)
+
+</script> -->
+<!-- 
+<script>
+    var masuk = prompt('Masuk jam? ')
+    masuk = parseInt(masuk)
+    var keluar= prompt('Pulang jam? ')
+    keluar = parseInt(keluar)
+    
+
+    if (keluar<masuk)
+    {
+        keluar+=12
+    }
+    var totaljam = keluar    
+    var biaya = totaljam * 1000
+
+    alert('Anda parkir selama ' +totaljam+ 'total biaya' +biaya)
+    document.write('Anda parkir selama ' +totaljam+ 'total biaya' +biaya)
+    
+</script> -->
+<script>
+    var konfirmasi = true
+    while(konfirmasi)
+    {
+        var hargasatuan = 0
+        var belanja = prompt('Mau belanja apa?\n1.Anggur Rp5000\n2.Apel Rp10000\n3.Semangka Rp20000\n4.Durian Rp30000')
+        if (belanja == 1 )
+        {
+            hargasatuan = 5000
+            var berat = parseInt(prompt('Mau beli berapa'))
+            alert('Anda harus bayar ' +(hargasatuan * berat))
+            konfirmasi = confirm('Ánda mau belanja lagi?')
+        }
+        else if (belanja == 2)
+        {
+            hargasatuan = 10000
+            var berat = parseInt(prompt('Mau beli berapa'))
+            alert('Ánda harus bayar ' +(hargasatuan * berat))
+            konfirmasi = false
+        }
+        else if (belanja == 3)
+        {
+            hargasatuan = 20000
+            var berat = parseInt(prompt('Mau beli berapa'))
+            alert('Ánda harus bayar ' +(hargasatuan * berat))
+            konfirmasi = false
+        }
+        else if (belanja == 4)
+        {
+            hargasatuan = 30000
+            var berat = parseInt(prompt('Mau beli berapa'))
+            alert('Ánda harus bayar ' +(hargasatuan * berat))
+            konfirmasi = false
+        }
+        else
+        {
+            alert('Ánda salah input')
+            konfirmasi = confirm('Ánda mau belanja atau tidak?')
+            if(konfirmasi)
+            {
+                alert('Áyo belanja')
+            }
+            else
+            {
+                alert('Stop')
+            }
+        }
+    }
+
+</script>
+</html>

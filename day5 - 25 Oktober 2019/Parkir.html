@@ -1,0 +1,23 @@
+<html>
+    <script>
+        function parkir (masuk,keluar){
+        
+           if (keluar<masuk){
+               keluar+=12
+            }
+            var totaljam = keluar - masuk    
+            var biaya = totaljam * 1000
+            var output = 'Anda parkir selama '+totaljam+ 'Jam dengan biaya '+biaya
+        
+            return output
+        }
+        var masuk1 = parseInt(prompt('Masuk jam berapa?'))
+        var keluar1 = parseInt(prompt('Keluar jam berapa?'))
+        alert(parkir(masuk1,keluar1))
+
+        var masuk2 = parseInt(prompt('Masuk2 jam berapa?'))
+        var keluar2 = parseInt(prompt('Keluar2 jam berapa?'))
+        alert(parkir(masuk2,keluar2))
+            
+    </script>
+</html>

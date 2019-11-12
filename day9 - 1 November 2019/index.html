@@ -1,0 +1,101 @@
+<html>
+    <script>
+        var produk = ['Anggur','Apel','Jeruk']
+        var harga = [1000,20000,5000]
+        var cart = []
+        var cartharga = []
+        var cartqty = []
+        function printProd(a){
+            var output = ''
+            for(var i = 0;i < produk.length;i++){
+                output+=(i+1)+' '+produk[i].toUpperCase()+' ===> Rp.'+harga[i]+',00\n'
+            }
+            return output
+        }
+        function  printCart(cartuser){
+            var output = ''
+            if(cart.length == 0){
+                return 'Cart kosong mohon diisi'
+            }
+            for( var i = 0; i < cartuser.length;i++){
+                output+= `${i+1}. ${cart[i]} dengan harga Rp. ${cartharga[i]},00 sebanyak ${cartqty[i]} dengan total harga ${cartharga[i]*cartqty[i]}\n`
+            }
+            return output
+        }
+        function cartStruk (cartuser){
+            var output = printCart(cartuser)+'==========================\n'
+            var totalbelanjaharga = 0
+            for(var i = 0;i < cartuser.length;i++){
+                totalbelanjaharga+=(cartqty[i]*cartharga[i])
+            }
+            output += `total belanja adalah Rp. ${totalbelanjaharga},00`
+            return output
+        }
+        alert(printProd(produk))
+        do {
+            var menuutama = prompt('1.User\n2.Admin\n3.Exit')
+            if(menuutama == 1){
+                var konfirmasiuser = true
+                var pilihbelanja = prompt(printProd(produk)+'Mau pilih yang mana')
+                var jumlahbelanja = parseInt(prompt('Mau beli berapa Kg?'))
+                var ada = false
+                var index = 0
+                for( var i = 0;i < cart.length;i++){
+                    if(produk[pilihbelanja - 1] == cart[i]){
+                        ada = true
+                        index = 1
+                    }
+                }
+                if(ada){
+                    cartqty[index]+=jumlahbelanja
+                }
+                else{
+                    cart.push(produk[pilihbelanja-1])
+                    cartharga.push(harga[pilihbelanja-1])
+                    cartqty.push(jumlahbelanja)
+                }
+                konfirmasiuser = confirm('Mau belanja lagi?')
+                if(konfirmasiuser == false){
+                    alert(cartStruk(cart))
+                }
+            } 
+            else if( menuutama == 2){
+                do {
+                    var menuadmin = prompt('1.Tambah Data\n2.Update Data\n3.Hapus Data\n4.Kembali ke menu utama')
+                    if(menuadmin == 1){
+                        do {
+                            var newprod = prompt('Masukkan produk baru')
+                            var newprice = parseInt(prompt('Masukkan harga produk'))
+                            produk.push(newprod)
+                            harga.push(newprice)
+                            alert(printProd(produk))
+                            var konfirmasi1 = confirm('Mau masukkan lagi?')
+                        } while (konfirmasi1);
+                    }
+                    else if(menuadmin == 2){
+                        do {
+                            alert(printProd(produk))
+                            var pilihan = parseInt(prompt(printProd(produk))+'\nPilih Produk')
+                            var updateprod = prompt('Masukkan nama produk untuk menggantikan '+produk[pilihan-1])
+                            var updateconfirm = confirm('Apakah yakin untuk menggantikan produk dengan nama '+produk[pilihan-1])
+                            if(updateconfirm){
+                                produk.splice(pilihan-1,1,updateprod)
+                                alert(printProd(produk))
+                            }
+                            else{
+                                alert('Produk tidak jadi diupdate')
+                            }
+                            var konfirmasi2 = confirm('Apakah mau update kembali?')
+                        } while (konfirmasi2);
+                    } 
+                } while (true);
+
+            }
+            else{
+                alert('Selamat tinggal')
+                break
+            }
+            
+        } while (true);
+    </script>
+</html>
